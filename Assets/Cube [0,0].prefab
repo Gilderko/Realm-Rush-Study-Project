@@ -155,6 +155,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   current_state: 0
+  isBlocked: 0
+  towerPrefarb: {fileID: 700771835864512587, guid: 06ed92c82758d094d8d6bf1fc190d00d,
+    type: 3}
+  towerSpawnParent: {fileID: 0}
   exploredFrom: {fileID: 0}
 --- !u!65 &620246958226833800
 BoxCollider:
@@ -208,7 +212,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8960998490670450667}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -248,7 +252,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8960998490670450667}
-  m_Text: '[-20,-20]'
+  m_Text: '[40,0]'
   m_OffsetZ: 0
   m_CharacterSize: 0.06
   m_LineSpacing: 1

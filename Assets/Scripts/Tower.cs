@@ -63,7 +63,7 @@ public class Tower : MonoBehaviour
 
     private void Shoot(bool isActive)
     {
-        var emissionModule = projectileParticle.emission;
+        ParticleSystem.EmissionModule emissionModule = projectileParticle.emission;
         emissionModule.enabled = isActive;
     }
 }

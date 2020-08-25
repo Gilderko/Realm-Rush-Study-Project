@@ -7,8 +7,18 @@ public class Waypoint : MonoBehaviour
     Vector3 gridPos;
     public enum WaypointState { unseen, seen, discovered }
     public WaypointState current_state = WaypointState.unseen;
+    public bool isBlocked = false;
+    [SerializeField] Tower towerPrefarb;
+    [SerializeField] GameObject towerSpawnParent;
+
     const int gridSize = 10;
     public Waypoint exploredFrom;
+
+    private void Start()
+    {
+        towerSpawnParent = GameObject.Find("Towers");
+    }
+
 
     public Vector3 GetGridPos()
     {
@@ -27,7 +37,19 @@ public class Waypoint : MonoBehaviour
 
     void OnMouseOver()
     {
-        print("Your mouse is over" + gameObject.transform);
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (!isBlocked)
+            {
+                Vector3 towerPosition = transform.position;
+                towerPosition.y += 10;
+                Instantiate(towerPrefarb, towerPosition,Quaternion.identity, towerSpawnParent.transform);
+                isBlocked = true;
+                print("Placed tower over " + gameObject.transform);
+            }
+           
+        }
+        
     }
 
 }

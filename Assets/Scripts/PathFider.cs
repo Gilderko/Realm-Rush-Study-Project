@@ -29,15 +29,21 @@ public class PathFider : MonoBehaviour
 
     private void CreatePath()
     {
-        enemyPath.Add(endWaypoint);
+        AddToPathAndMarkBlocked(endWaypoint);
         Waypoint currentWaypoint = endWaypoint.exploredFrom;
         while (currentWaypoint != startWaypoint)
         {
-            enemyPath.Add(currentWaypoint);
+            AddToPathAndMarkBlocked(currentWaypoint);
             currentWaypoint = currentWaypoint.exploredFrom;
         }
-        enemyPath.Add(currentWaypoint);
+        AddToPathAndMarkBlocked(currentWaypoint);
         enemyPath.Reverse();
+    }
+
+    private void AddToPathAndMarkBlocked(Waypoint waypoint)
+    {
+        enemyPath.Add(waypoint);
+        waypoint.isBlocked = true;
     }
 
     private void BFSFindPath()
@@ -46,10 +52,10 @@ public class PathFider : MonoBehaviour
         while (waypointQue.Count > 0)
         {
             searchCenter = waypointQue.Dequeue();
-            print("Searching from" + searchCenter.GetGridPos());
+            //print("Searching from" + searchCenter.GetGridPos());
             if (searchCenter.GetGridPos() == endWaypoint.GetGridPos())
             {
-                print("Found end");
+                //print("Found end");
                 return;
             }
             ExploreNeighbours();
