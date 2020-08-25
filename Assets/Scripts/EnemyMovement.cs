@@ -5,11 +5,12 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] float waitTime = 1f;
+    
     List<Waypoint> enemyPath = new List<Waypoint>();
     void Start()
     {
         PathFider pathFinder = FindObjectOfType<PathFider>();
-        List<Waypoint> enemyPath = pathFinder.GetPath();
+        enemyPath = pathFinder.GetPath();
         StartCoroutine(FollowPath(enemyPath));
     }
     

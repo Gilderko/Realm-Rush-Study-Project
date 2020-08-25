@@ -18,10 +18,6 @@ public class EnemySpawner : MonoBehaviour
         {
             Instantiate(enemyPrefarb, transform);
             yield return new WaitForSeconds(secondsBetweenSpawns);
-        }
-        
+        }        
     }
-
-
-    
 }

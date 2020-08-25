@@ -43,7 +43,7 @@ public class Waypoint : MonoBehaviour
             {
                 Vector3 towerPosition = transform.position;
                 towerPosition.y += 10;
-                Instantiate(towerPrefarb, towerPosition,Quaternion.identity, towerSpawnParent.transform);
+                Instantiate(towerPrefarb, towerPosition, Quaternion.identity, towerSpawnParent.transform);
                 isBlocked = true;
                 print("Placed tower over " + gameObject.transform);
             }
