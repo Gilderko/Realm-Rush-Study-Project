@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] float secondsBetweenSpawns = 2f;
+    [Range(1f,5f)] [SerializeField] float secondsBetweenSpawns = 2f;
     [SerializeField] EnemyMovement enemyPrefarb;
 
     void Start()
@@ -14,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator SpawnEnemy()
     {
-        for (int i = 1; i <= 5; i++)
+        while (true)
         {
             Instantiate(enemyPrefarb, transform);
             yield return new WaitForSeconds(secondsBetweenSpawns);
