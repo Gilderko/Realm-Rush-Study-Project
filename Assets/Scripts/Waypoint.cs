@@ -7,19 +7,11 @@ public class Waypoint : MonoBehaviour
     Vector3 gridPos;
     public enum WaypointState { unseen, seen, discovered }
     public WaypointState current_state = WaypointState.unseen;
-    public bool isBlocked = false;
-    [SerializeField] Tower towerPrefarb;
-    [SerializeField] GameObject towerSpawnParent;
+    public bool isBlocked = false;    
 
     const int gridSize = 10;
     public Waypoint exploredFrom;
-
-    private void Start()
-    {
-        towerSpawnParent = GameObject.Find("Towers");
-    }
-
-
+    
     public Vector3 GetGridPos()
     {
         Vector3 snapPos;
@@ -41,11 +33,7 @@ public class Waypoint : MonoBehaviour
         {
             if (!isBlocked)
             {
-                Vector3 towerPosition = transform.position;
-                towerPosition.y += 10;
-                Instantiate(towerPrefarb, towerPosition, Quaternion.identity, towerSpawnParent.transform);
-                isBlocked = true;
-                print("Placed tower over " + gameObject.transform);
+                FindObjectOfType<TowerFactory>().AddTower(this);
             }           
         }        
     }

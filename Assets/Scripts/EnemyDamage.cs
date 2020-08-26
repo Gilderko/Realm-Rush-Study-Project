@@ -20,7 +20,7 @@ public class EnemyDamage : MonoBehaviour
 
     private void KillEnemy()
     {
-        ParticleSystem deathInstance = Instantiate(deathParticleEnemy,transform.position,Quaternion.identity);
+        ParticleSystem deathInstance = Instantiate(deathParticleEnemy,transform.position,Quaternion.identity,gameObject.transform.parent);
         deathInstance.Play();        
         Destroy(gameObject);        
     }
