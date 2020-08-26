@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] float waitTime = 1f;
+    [SerializeField] ParticleSystem reachedGoalParticles;
     
     List<Waypoint> enemyPath = new List<Waypoint>();
     void Start()
@@ -23,7 +24,15 @@ public class EnemyMovement : MonoBehaviour
             //print("Visiting " + waypointBlock.name);
             yield return new WaitForSeconds(waitTime);
         }
-        //print("Ending FollowPath");
+        EnemyReachedEnd();
+        
     }
-    
+
+    private void EnemyReachedEnd()
+    {
+        ParticleSystem deathInstance = Instantiate(reachedGoalParticles, transform.position, Quaternion.identity, gameObject.transform.parent);
+        deathInstance.Play();
+        Destroy(gameObject);
+    }
+
 }

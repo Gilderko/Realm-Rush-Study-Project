@@ -48,6 +48,7 @@ MonoBehaviour:
   objectToPan: {fileID: 700087660205524584}
   attackRange: 25
   projectileParticle: {fileID: 8533629669136627016}
+  waypointStand: {fileID: 0}
   targetEnemy: {fileID: 0}
 --- !u!1 &8578831978838699161
 GameObject:
@@ -217,7 +218,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 300
+      scalar: 400
       minScalar: 5
       maxCurve:
         serializedVersion: 2

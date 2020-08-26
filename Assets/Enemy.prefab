@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4625697749965777000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8477858088728454944}
@@ -48,7 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee37d854fbb63c94f968453b43a6ef83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 2
+  waitTime: 0.5
+  reachedGoalParticles: {fileID: 198537984209914932, guid: 1a51bfda454239a41afb7dee687c6ac0,
+    type: 3}
 --- !u!54 &4764409851256797192
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -77,9 +79,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5be7dbb13dc15d40bb8e5aafd6f21ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 10
+  hitPoints: 2
   hitParticleEnemy: {fileID: 3238659106414991646}
-  deathParticleEnemy: {fileID: 198537984209914932, guid: 1a51bfda454239a41afb7dee687c6ac0,
+  deathParticleEnemy: {fileID: 198537984209914932, guid: ae73499310dd3c343958f153bb3d3508,
     type: 3}
 --- !u!64 &6324099881188235310
 MeshCollider:
