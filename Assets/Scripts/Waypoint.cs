@@ -46,10 +46,10 @@ public class Waypoint : MonoBehaviour
                 Instantiate(towerPrefarb, towerPosition, Quaternion.identity, towerSpawnParent.transform);
                 isBlocked = true;
                 print("Placed tower over " + gameObject.transform);
-            }
-           
-        }
-        
+            }           
+        }        
     }
+
+    
 
 }

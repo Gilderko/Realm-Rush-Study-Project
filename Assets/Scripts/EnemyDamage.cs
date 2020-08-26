@@ -6,7 +6,9 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour
 {
     [SerializeField] int hitPoints = 10;
-    
+    [SerializeField] ParticleSystem hitParticleEnemy;
+    [SerializeField] ParticleSystem deathParticleEnemy;
+
     private void OnParticleCollision(GameObject other)
     {
         ProcessHit();
@@ -18,14 +20,14 @@ public class EnemyDamage : MonoBehaviour
 
     private void KillEnemy()
     {
-        Destroy(gameObject);
+        ParticleSystem deathInstance = Instantiate(deathParticleEnemy,transform.position,Quaternion.identity);
+        deathInstance.Play();        
+        Destroy(gameObject);        
     }
 
     void ProcessHit()
     {
         hitPoints--;
-        //print("Current hp " + hitPoints);
+        hitParticleEnemy.Play();
     }
-
-
 }
