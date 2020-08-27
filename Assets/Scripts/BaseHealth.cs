@@ -7,6 +7,7 @@ public class BaseHealth : MonoBehaviour
 {
     [SerializeField] int healthPoints;
     [SerializeField] Text healthText;
+    [SerializeField] AudioClip baseDamage;
 
     private void Start()
     {
@@ -15,6 +16,7 @@ public class BaseHealth : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        gameObject.GetComponent<AudioSource>().PlayOneShot(baseDamage);
         healthPoints--;
         healthText.text = "Base health: " + healthPoints.ToString();
         other.gameObject.transform.parent.GetComponent<EnemyMovement>().EnemyReachedEnd();

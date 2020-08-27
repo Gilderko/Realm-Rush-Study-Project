@@ -79,10 +79,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5be7dbb13dc15d40bb8e5aafd6f21ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 2
+  hitPoints: 3
   hitParticleEnemy: {fileID: 3238659106414991646}
   deathParticleEnemy: {fileID: 198537984209914932, guid: ae73499310dd3c343958f153bb3d3508,
     type: 3}
+  enemyHitSound: {fileID: 8300000, guid: ba5fc33ac3c441340adfc69f5fedbd7d, type: 3}
+  enemyDeathSound: {fileID: 8300000, guid: bf4ac47d7625a0147979cd940c230f97, type: 3}
+  audioListener: {fileID: 0}
 --- !u!64 &6324099881188235310
 MeshCollider:
   m_ObjectHideFlags: 0
