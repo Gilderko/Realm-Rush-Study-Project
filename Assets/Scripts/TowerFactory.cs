@@ -1,15 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TowerFactory : MonoBehaviour
 {
-    [SerializeField] Tower towerPrefarb;
+    public static Tower towerPrefarb;
     [SerializeField] int maxTowerCount;
-
     
     Queue<Tower> waypointQueBuffer = new Queue<Tower>();
-    
+
     public void AddTower(Waypoint baseWaypoint)
     {
         Vector3 towerPosition = baseWaypoint.transform.position;

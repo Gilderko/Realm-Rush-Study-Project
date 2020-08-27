@@ -97,13 +97,13 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 1
-    value: 30
+    value: 1
   tint:
     overrideState: 1
     value: 10
   colorFilter:
     overrideState: 1
-    value: {r: 1, g: 0.93593156, b: 0.7971698, a: 1}
+    value: {r: 0.18187076, g: 0.21085548, b: 0.5754717, a: 1}
   hueShift:
     overrideState: 1
     value: 0
@@ -1395,7 +1395,7 @@ MonoBehaviour:
     value: 2
   color:
     overrideState: 1
-    value: {r: 1, g: 0.53792745, b: 0, a: 1}
+    value: {r: 0.23696157, g: 0.39716092, b: 0.7075472, a: 1}
   ambientOnly:
     overrideState: 0
     value: 1
