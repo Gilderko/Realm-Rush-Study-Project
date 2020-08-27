@@ -1,15 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour
 {
     [Range(1f,5f)] [SerializeField] float secondsBetweenSpawns = 2f;
     [SerializeField] EnemyMovement enemyPrefarb;
+    
 
     void Start()
     {
-        StartCoroutine(SpawnEnemy());        
+        StartCoroutine(SpawnEnemy());
+        
     }
 
     IEnumerator SpawnEnemy()

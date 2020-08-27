@@ -23,16 +23,15 @@ public class EnemyMovement : MonoBehaviour
             transform.position = new Vector3(waypointBlock.transform.position.x,transform.position.y, waypointBlock.transform.position.z);
             //print("Visiting " + waypointBlock.name);
             yield return new WaitForSeconds(waitTime);
-        }
-        EnemyReachedEnd();
-        
+        }               
     }
 
-    private void EnemyReachedEnd()
+    public void EnemyReachedEnd()
     {
         ParticleSystem deathInstance = Instantiate(reachedGoalParticles, transform.position, Quaternion.identity, gameObject.transform.parent);
         deathInstance.Play();
         Destroy(gameObject);
     }
+    
 
 }

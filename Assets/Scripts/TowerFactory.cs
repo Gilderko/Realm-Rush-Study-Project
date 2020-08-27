@@ -27,6 +27,7 @@ public class TowerFactory : MonoBehaviour
             Tower towerToMove = waypointQueBuffer.Dequeue();
             towerToMove.waypointStand.isBlocked = false;
             towerToMove.transform.position = towerPosition;
+            towerToMove.waypointStand = baseWaypoint;
             waypointQueBuffer.Enqueue(towerToMove);
             print("Moved tower to " + baseWaypoint.transform.position);
         }
