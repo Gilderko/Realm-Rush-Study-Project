@@ -9,8 +9,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] int enemiesToSpawn;
     [SerializeField] EnemyMovement enemyPrefarb;
     [SerializeField] AudioClip spawnSound;
-    [SerializeField] GameManager gameManager;
-    
+    [SerializeField] GameManager gameManager;    
 
     void Start()
     {

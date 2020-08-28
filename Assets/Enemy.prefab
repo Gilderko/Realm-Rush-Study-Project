@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5be7dbb13dc15d40bb8e5aafd6f21ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 5
+  hitPoints: 4
   hitParticleEnemy: {fileID: 3238659106414991646}
   deathParticleEnemy: {fileID: 198537984209914932, guid: ae73499310dd3c343958f153bb3d3508,
     type: 3}

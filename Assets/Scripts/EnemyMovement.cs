@@ -32,6 +32,4 @@ public class EnemyMovement : MonoBehaviour
         deathInstance.Play();
         Destroy(gameObject);
     }
-    
-
 }

@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class TowerFactory : MonoBehaviour
 {
-    public static Tower towerPrefarb;
     [SerializeField] int maxTowerCount;
-    
+    public static Tower towerPrefarb;        
     Queue<Tower> waypointQueBuffer = new Queue<Tower>();
 
     public void AddTower(Waypoint baseWaypoint)
