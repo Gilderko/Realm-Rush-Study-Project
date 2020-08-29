@@ -5260,7 +5260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2469a626af53154f8752e8bb36974ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 15
+  healthPoints: 5
   healthText: {fileID: 1381050758}
   baseDamage: {fileID: 8300000, guid: 83cdab9fd08bd044e8f34d4ce10dd249, type: 3}
 --- !u!4 &1139950875 stripped

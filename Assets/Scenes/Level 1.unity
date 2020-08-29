@@ -4613,20 +4613,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4748810071495380018, guid: cc2f250d261ccb24787bb80073a80422,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 436.5996
-      objectReference: {fileID: 0}
     - target: {fileID: 4748810072750564743, guid: cc2f250d261ccb24787bb80073a80422,
         type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 4748810072750564743, guid: cc2f250d261ccb24787bb80073a80422,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4748810072750564747, guid: cc2f250d261ccb24787bb80073a80422,
         type: 3}
@@ -4862,7 +4852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2469a626af53154f8752e8bb36974ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 10
+  healthPoints: 5
   healthText: {fileID: 1381050758}
   baseDamage: {fileID: 8300000, guid: 83cdab9fd08bd044e8f34d4ce10dd249, type: 3}
 --- !u!1001 &1140148201
@@ -5380,7 +5370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb78a9b34632ba4daeabfa2978c576f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTowerCount: 4
+  maxTowerCount: 3
 --- !u!1001 &1285059671
 PrefabInstance:
   m_ObjectHideFlags: 0

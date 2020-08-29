@@ -85,6 +85,8 @@ MonoBehaviour:
     type: 3}
   enemyHitSound: {fileID: 8300000, guid: ba5fc33ac3c441340adfc69f5fedbd7d, type: 3}
   enemyDeathSound: {fileID: 8300000, guid: bf4ac47d7625a0147979cd940c230f97, type: 3}
+  enemyReward: 1
+  goldManager: {fileID: 0}
 --- !u!64 &6324099881188235310
 MeshCollider:
   m_ObjectHideFlags: 0

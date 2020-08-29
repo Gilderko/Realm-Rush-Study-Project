@@ -102,7 +102,16 @@ public class MainMenu : MonoBehaviour
 
     public void ResetAllUpgrades()
     {
-        PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteKey("burstTowerLvl");
+        PlayerPrefs.DeleteKey("burstTowerAmountUpgrade");
+        PlayerPrefs.DeleteKey("burstTowerFrequencyUpgrade");
+        PlayerPrefs.DeleteKey("quickShotTowerLvl");
+        PlayerPrefs.DeleteKey("quickShotTowerAttackSpeedUpgrade");
+        PlayerPrefs.DeleteKey("quickShotTowerAccuracyUpgrade");
+        PlayerPrefs.DeleteKey("baseTowerLvl");
+        PlayerPrefs.DeleteKey("baseTowerAttackSpeedUpgrade");
+        PlayerPrefs.DeleteKey("baseTowerParticleSpeedUpgrade");
+
         BaseTower.attackSpeedUpgrade = 0;
         BaseTower.particleSpeedUpgrade = 0;
         QuickShotTower.attackSpeedUpgrade = 0;

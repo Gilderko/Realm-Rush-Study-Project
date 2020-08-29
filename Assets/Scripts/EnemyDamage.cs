@@ -10,11 +10,14 @@ public class EnemyDamage : MonoBehaviour
     [SerializeField] ParticleSystem deathParticleEnemy;
     [SerializeField] AudioClip enemyHitSound;
     [SerializeField] AudioClip enemyDeathSound;
+    [SerializeField] int enemyReward = 5;
+    [SerializeField] GoldManager goldManager;
     GameObject audioListener;
 
     private void Start()
     {
         audioListener = GameObject.Find("Main Camera");
+        goldManager = FindObjectOfType<GoldManager>();
     }
 
     private void OnParticleCollision(GameObject other)
@@ -31,6 +34,7 @@ public class EnemyDamage : MonoBehaviour
         ParticleSystem deathInstance = Instantiate(deathParticleEnemy,transform.position,Quaternion.identity,gameObject.transform.parent);
         deathInstance.Play();
         AudioSource.PlayClipAtPoint(enemyDeathSound, audioListener.transform.position);
+        goldManager.AddGold(enemyReward);
         Destroy(gameObject);        
     }
 

@@ -54,8 +54,6 @@ public class Tower : MonoBehaviour
         float distanceToEnemy = Vector3.Distance(targetEnemy.transform.position, gameObject.transform.position);
         if (distanceToEnemy <= attackRange)
         {
-            print(distanceToEnemy);
-            print(attackRange);
             Shoot(true);
         }
         else
