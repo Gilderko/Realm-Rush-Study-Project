@@ -18,14 +18,17 @@ public class BaseHealth : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        gameObject.GetComponent<AudioSource>().PlayOneShot(baseDamage);
-        healthPoints--;
-        if (healthPoints <= 0)
-        {
-            Time.timeScale = 0;
-            gameManager.RestartLevel();
+        if (other.gameObject.tag == "Enemy")
+        { 
+            gameObject.GetComponent<AudioSource>().PlayOneShot(baseDamage);
+            healthPoints--;
+            if (healthPoints <= 0)
+            {
+                Time.timeScale = 0;
+                gameManager.RestartLevel();
+            }
+            healthText.text = "Base health: " + healthPoints.ToString();
+            other.gameObject.transform.parent.GetComponent<EnemyMovement>().EnemyReachedEnd();
         }
-        healthText.text = "Base health: " + healthPoints.ToString();
-        other.gameObject.transform.parent.GetComponent<EnemyMovement>().EnemyReachedEnd();
     }
 }

@@ -43,7 +43,7 @@ public class GoldManager : MonoBehaviour
 
     public void ResetGold()
     {
-        PlayerPrefs.DeleteKey("totalgold");
+        PlayerPrefs.DeleteKey("totalGold");
         goldText.text = "Gold: 0";
     }
 }

@@ -524,27 +524,7 @@ PrefabInstance:
     - target: {fileID: 7350857964972122054, guid: 79a168b8846db534ea7d7f0f649d3b73,
         type: 3}
       propertyPath: m_Name
-      value: TwoShot
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449189751781705239, guid: 79a168b8846db534ea7d7f0f649d3b73,
-        type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].repeatInterval
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449189751781705239, guid: 79a168b8846db534ea7d7f0f649d3b73,
-        type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449189751781705239, guid: 79a168b8846db534ea7d7f0f649d3b73,
-        type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449189751781705239, guid: 79a168b8846db534ea7d7f0f649d3b73,
-        type: 3}
-      propertyPath: lengthInSec
-      value: 1.1
+      value: BurstShot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79a168b8846db534ea7d7f0f649d3b73, type: 3}

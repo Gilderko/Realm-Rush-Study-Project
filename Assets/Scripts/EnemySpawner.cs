@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [Range(1f,5f)] [SerializeField] float secondsBetweenSpawns = 2f;
+    [Range(0.1f,5f)] [SerializeField] float secondsBetweenSpawns = 2f;
     [SerializeField] int enemiesToSpawn;
     [SerializeField] EnemyMovement enemyPrefarb;
     [SerializeField] AudioClip spawnSound;

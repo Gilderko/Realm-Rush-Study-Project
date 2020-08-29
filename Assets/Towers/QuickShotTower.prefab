@@ -311,16 +311,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MutliShot
       objectReference: {fileID: 0}
-    - target: {fileID: 7449189751781705239, guid: f26e7b6914918dc4480888ea87e07574,
-        type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449189751781705239, guid: f26e7b6914918dc4480888ea87e07574,
-        type: 3}
-      propertyPath: ShapeModule.sphericalDirectionAmount
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f26e7b6914918dc4480888ea87e07574, type: 3}
 --- !u!4 &4678615261860606004 stripped

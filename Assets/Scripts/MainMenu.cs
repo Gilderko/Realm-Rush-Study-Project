@@ -19,6 +19,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] Text quickShotTowerLvlText;
     [SerializeField] Text burstTowerLvlText;
 
+    [SerializeField] GoldManager goldManager;
+
     static bool alreadyLoaded = false;
     public static Tower selectedTower;
 
@@ -31,7 +33,8 @@ public class MainMenu : MonoBehaviour
         if (!alreadyLoaded)
         {
             print("Loading again");
-            TowerFactory.towerPrefarb = quickShotTower;
+            TowerFactory.towerPrefarb = baseTower;
+            goldManager = FindObjectOfType<GoldManager>();
             LoadBaseTowerStats();
             LoadBurstTowerStats();
             LoadQuickshotTowerStats();
@@ -49,34 +52,44 @@ public class MainMenu : MonoBehaviour
 
     public void UpgradeBaseTowerStats()
     {
-
-        BaseTower.towerLvl += 1;
-        BaseTower.attackSpeedUpgrade += 0.5f;
-        BaseTower.particleSpeedUpgrade += 20f;
-        PlayerPrefs.SetInt("baseTowerLvl", BaseTower.towerLvl);
-        PlayerPrefs.SetFloat("baseTowerAttackSpeedUpgrade",BaseTower.attackSpeedUpgrade);
-        PlayerPrefs.SetFloat("baseTowerParticleSpeedUpgrade",BaseTower.particleSpeedUpgrade);
-        
+        if (BaseTower.towerLvl < 20 && goldManager.GetGold() >= 40)
+        {        
+            BaseTower.towerLvl += 1;
+            BaseTower.attackSpeedUpgrade += 0.2f;
+            BaseTower.particleSpeedUpgrade += 20f;
+            PlayerPrefs.SetInt("baseTowerLvl", BaseTower.towerLvl);
+            PlayerPrefs.SetFloat("baseTowerAttackSpeedUpgrade",BaseTower.attackSpeedUpgrade);
+            PlayerPrefs.SetFloat("baseTowerParticleSpeedUpgrade",BaseTower.particleSpeedUpgrade);
+            goldManager.RemoveGold(40);
+        }
     }
 
     public void UpgradeQuickshotTowerStats()
     {
-        QuickShotTower.towerLvl += 1;
-        QuickShotTower.attackSpeedUpgrade += 1f;
-        QuickShotTower.accuracyUpgrade += 0.15f;
-        PlayerPrefs.SetInt("quickShotTowerLvl", QuickShotTower.towerLvl);
-        PlayerPrefs.SetFloat("quickShotTowerAttackSpeedUpgrade",QuickShotTower.attackSpeedUpgrade);
-        PlayerPrefs.SetFloat("quickShotTowerAttackSpeedUpgrade",QuickShotTower.accuracyUpgrade);
+        if (QuickShotTower.towerLvl < 20 && goldManager.GetGold() >= 40)
+        {
+            QuickShotTower.towerLvl += 1;
+            QuickShotTower.attackSpeedUpgrade += 0.4f;
+            QuickShotTower.accuracyUpgrade += 0.005f;
+            PlayerPrefs.SetInt("quickShotTowerLvl", QuickShotTower.towerLvl);
+            PlayerPrefs.SetFloat("quickShotTowerAttackSpeedUpgrade",QuickShotTower.attackSpeedUpgrade);
+            PlayerPrefs.SetFloat("quickShotTowerAttackSpeedUpgrade",QuickShotTower.accuracyUpgrade);
+            goldManager.RemoveGold(40);
+        }
     }
 
     public void UpgradeBurstTowerStats()
     {
-        BurstTower.towerLvl += 1;
-        BurstTower.burstAmountUpgrade += 1;
-        BurstTower.burstFrequencyUpgrade += 0.4f;
-        PlayerPrefs.SetInt("burstTowerLvl", BurstTower.towerLvl);
-        PlayerPrefs.SetInt("burstTowerAmountUpgrade", BurstTower.burstAmountUpgrade);
-        PlayerPrefs.SetFloat("burstTowerFrequencyUpgrade", BurstTower.burstFrequencyUpgrade);
+        if (BurstTower.towerLvl < 20 && goldManager.GetGold() >= 40)
+        {        
+            BurstTower.towerLvl += 1;
+            BurstTower.burstAttackSpeedUpgrade += 0.5f;
+            BurstTower.burstFrequencyUpgrade += 0.02f;
+            PlayerPrefs.SetInt("burstTowerLvl", BurstTower.towerLvl);
+            PlayerPrefs.SetFloat("burstTowerAttackSpeedUpgrade", BurstTower.burstAttackSpeedUpgrade);
+            PlayerPrefs.SetFloat("burstTowerFrequencyUpgrade", BurstTower.burstFrequencyUpgrade);
+            goldManager.RemoveGold(40);
+        }
     }
 
     private void LoadBaseTowerStats()
@@ -96,14 +109,14 @@ public class MainMenu : MonoBehaviour
     private void LoadBurstTowerStats()
     {
         BurstTower.towerLvl = PlayerPrefs.GetInt("burstTowerLvl");
-        BurstTower.burstAmountUpgrade = PlayerPrefs.GetInt("burstTowerAmountUpgrade");
+        BurstTower.burstAttackSpeedUpgrade = PlayerPrefs.GetFloat("burstTowerAttackSpeedUpgrade");
         BurstTower.burstFrequencyUpgrade = PlayerPrefs.GetFloat("burstTowerFrequencyUpgrade");
     }
 
     public void ResetAllUpgrades()
     {
         PlayerPrefs.DeleteKey("burstTowerLvl");
-        PlayerPrefs.DeleteKey("burstTowerAmountUpgrade");
+        PlayerPrefs.DeleteKey("burstTowerAttackSpeedUpgrade");
         PlayerPrefs.DeleteKey("burstTowerFrequencyUpgrade");
         PlayerPrefs.DeleteKey("quickShotTowerLvl");
         PlayerPrefs.DeleteKey("quickShotTowerAttackSpeedUpgrade");
@@ -116,7 +129,7 @@ public class MainMenu : MonoBehaviour
         BaseTower.particleSpeedUpgrade = 0;
         QuickShotTower.attackSpeedUpgrade = 0;
         QuickShotTower.accuracyUpgrade = 0;
-        BurstTower.burstAmountUpgrade = 0;
+        BurstTower.burstAttackSpeedUpgrade = 0;
         BurstTower.burstFrequencyUpgrade = 0;
 
         BaseTower.towerLvl = 0;
@@ -174,6 +187,18 @@ public class MainMenu : MonoBehaviour
     public void PlayLevel5()
     {
         SceneManager.LoadScene(5);
+    }
+    public void PlayLevel6()
+    {
+        SceneManager.LoadScene(6);
+    }
+    public void PlayLevel7()
+    {
+        SceneManager.LoadScene(7);
+    }
+    public void PlayLevel8()
+    {
+        SceneManager.LoadScene(8);
     }
 
     public void ChangeTowerToBase()

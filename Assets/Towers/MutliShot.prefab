@@ -743,8 +743,8 @@ ParticleSystem:
     m_TextureAlphaAffectsParticles: 1
     m_TextureBilinearFiltering: 0
     randomDirectionAmount: 0.3
-    sphericalDirectionAmount: 0.2
-    randomPositionAmount: 0.1
+    sphericalDirectionAmount: 0.1
+    randomPositionAmount: 0
     radius:
       value: 3.5
       mode: 0
@@ -865,7 +865,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 25
+      scalar: 4
       minScalar: 10
       maxCurve:
         serializedVersion: 2

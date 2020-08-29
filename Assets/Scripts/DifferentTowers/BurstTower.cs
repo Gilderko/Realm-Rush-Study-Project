@@ -4,27 +4,25 @@ using UnityEngine;
 
 public class BurstTower : Tower
 {
-    public static int burstAmountUpgrade = 0;
-    private int burstAmountBaseVal = 3;
+    public static float burstAttackSpeedUpgrade = 0;
+    private float burstAttackSpeedBaseVal = 0.5f;
 
     public static float burstFrequencyUpgrade = 0f;
-    private float burstFrequencyBaseVal = 0.9f;
+    private float burstFrequencyBaseVal = 1f;
 
     public static int towerLvl = 0;
 
 
     private void Start()
     {
-        UpdateBurstAmount();
+        UpdateAttackSpeed();
         UpdateBurstFrequency();
     }
 
-    private void UpdateBurstAmount()
+    private void UpdateAttackSpeed()
     {
         ParticleSystem.EmissionModule emmisionBullets = this.projectileParticle.emission;
-        var burst = emmisionBullets.GetBurst(0);
-        burst.minCount = burst.maxCount = (short)(burstAmountBaseVal + burstAmountUpgrade);
-        emmisionBullets.SetBurst(0, burst);
+        emmisionBullets.rateOverTime = burstAttackSpeedBaseVal + burstAttackSpeedUpgrade;
     }
 
     private void UpdateBurstFrequency()
