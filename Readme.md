@@ -2,8 +2,8 @@
 
 This is a repo thanks to which I am learning Unity via GameDevTV amazing courses. 
 
-I added upon what was in course with simple UI, more postprocessing, more tower types and
-leveling up your towers.
+Improved tower defense study project with the addition of towers with inheritance
+, a simple shop for improving your towers, general postprocessing, more levels, and a saving system.
 
 ## Project images
 ### Main Menu
